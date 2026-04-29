@@ -4,6 +4,8 @@ Structural Security Diagnostics
 
 Part of the MB-X.01 / OMNIA structural measurement lineage.
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19879356.svg)](https://doi.org/10.5281/zenodo.19879356)
+
 ---
 
 # New Here

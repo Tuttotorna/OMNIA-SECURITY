@@ -12,11 +12,38 @@ Start here:
 
 1. [SECURITY_AT_A_GLANCE.md](./SECURITY_AT_A_GLANCE.md)
 2. [SECURITY_CASES.md](./SECURITY_CASES.md)
-3. [FIRST_SECURITY_EXPERIMENT.md](./FIRST_SECURITY_EXPERIMENT.md)
-4. [FIRST_SECURITY_EXPERIMENT_RESULTS.md](./FIRST_SECURITY_EXPERIMENT_RESULTS.md)
-5. [run_first_security_experiment.py](./run_first_security_experiment.py)
+3. [RUN_ALL_SECURITY_EXPERIMENTS.py](./RUN_ALL_SECURITY_EXPERIMENTS.py)
+4. [FIRST_SECURITY_EXPERIMENT.md](./FIRST_SECURITY_EXPERIMENT.md)
+5. [FIRST_SECURITY_EXPERIMENT_RESULTS.md](./FIRST_SECURITY_EXPERIMENT_RESULTS.md)
+6. [COLAB_FIRST_SECURITY_RUN_V0.md](./COLAB_FIRST_SECURITY_RUN_V0.md)
+7. [SECOND_SECURITY_EXPERIMENT.md](./SECOND_SECURITY_EXPERIMENT.md)
+8. [SECOND_SECURITY_EXPERIMENT_RESULTS.md](./SECOND_SECURITY_EXPERIMENT_RESULTS.md)
+9. [COLAB_SECOND_SECURITY_RUN_V0.md](./COLAB_SECOND_SECURITY_RUN_V0.md)
 
 This path is currently the shortest route from first contact to the current bounded structural security direction of the repository.
+
+---
+
+# Quick Run
+
+Run all current bounded security experiments:
+
+```bash
+python RUN_ALL_SECURITY_EXPERIMENTS.py
+```
+
+Runner:
+
+- [RUN_ALL_SECURITY_EXPERIMENTS.py](./RUN_ALL_SECURITY_EXPERIMENTS.py)
+
+Current experiments include:
+
+1. configuration drift vs surface stability
+2. log instability before visible failure
+
+The goal is not production security analysis.
+
+The goal is bounded structural inspection under controlled simplified conditions.
 
 ---
 
@@ -86,9 +113,15 @@ Current directions include:
 
 ---
 
-# First Concrete Example
+# Current Experiments
 
-The first bounded experiment compares two simplified configurations.
+The repository currently contains two bounded security-relevant structural experiments.
+
+---
+
+## Experiment 01 — Configuration Drift vs Surface Stability
+
+This experiment compares two simplified configurations.
 
 Baseline:
 
@@ -139,20 +172,70 @@ surface similarity
 structural equivalence
 ```
 
-Read:
+Files:
 
 - [FIRST_SECURITY_EXPERIMENT.md](./FIRST_SECURITY_EXPERIMENT.md)
 - [FIRST_SECURITY_EXPERIMENT_RESULTS.md](./FIRST_SECURITY_EXPERIMENT_RESULTS.md)
+- [COLAB_FIRST_SECURITY_RUN_V0.md](./COLAB_FIRST_SECURITY_RUN_V0.md)
+- [run_first_security_experiment.py](./run_first_security_experiment.py)
 
-Run:
+---
 
-```bash
-python run_first_security_experiment.py
+## Experiment 02 — Log Instability Before Visible Failure
+
+This experiment compares two simplified log trajectories.
+
+Stable trajectory:
+
+```text
+t1: auth_success user=alice method=password
+t2: auth_success user=bob method=password
+t3: auth_success user=carol method=password
+t4: auth_success user=dave method=password
+t5: auth_success user=erin method=password
 ```
 
-Runner:
+Unstable trajectory:
 
-- [run_first_security_experiment.py](./run_first_security_experiment.py)
+```text
+t1: auth_success user=alice method=password
+t2: auth_retry user=alice method=password
+t3: auth_retry user=alice method=password
+t4: auth_error user=unknown method=missing
+t5: auth_bypass_attempt user=unknown method=null
+```
+
+Surface observation:
+
+```text
+both trajectories remain parseable
+both remain authentication-related
+both continue emitting logs
+```
+
+Structural observation:
+
+```text
+retry concentration
+event taxonomy drift
+unknown identity emergence
+field degradation
+```
+
+Key separation:
+
+```text
+log availability
+!=
+log structural stability
+```
+
+Files:
+
+- [SECOND_SECURITY_EXPERIMENT.md](./SECOND_SECURITY_EXPERIMENT.md)
+- [SECOND_SECURITY_EXPERIMENT_RESULTS.md](./SECOND_SECURITY_EXPERIMENT_RESULTS.md)
+- [COLAB_SECOND_SECURITY_RUN_V0.md](./COLAB_SECOND_SECURITY_RUN_V0.md)
+- [run_second_security_experiment.py](./run_second_security_experiment.py)
 
 ---
 
@@ -209,6 +292,8 @@ OMNIA SECURITY is NOT:
 - attack automation
 - universal threat detection
 - production-grade security infrastructure
+- production monitoring
+- SIEM replacement
 
 ---
 
@@ -220,7 +305,7 @@ Current status:
 early bounded research direction
 ```
 
-The repository currently defines direction, architectural scope, and a first runnable security-relevant structural drift example.
+The repository currently defines direction, architectural scope, two runnable security-relevant structural drift examples, and Colab verification notes.
 
 No production claims are made.
 
@@ -292,17 +377,23 @@ Cases:
 
 - [SECURITY_CASES.md](./SECURITY_CASES.md)
 
+Run all experiments:
+
+- [RUN_ALL_SECURITY_EXPERIMENTS.py](./RUN_ALL_SECURITY_EXPERIMENTS.py)
+
 First experiment:
 
 - [FIRST_SECURITY_EXPERIMENT.md](./FIRST_SECURITY_EXPERIMENT.md)
-
-First results:
-
 - [FIRST_SECURITY_EXPERIMENT_RESULTS.md](./FIRST_SECURITY_EXPERIMENT_RESULTS.md)
-
-Runner:
-
+- [COLAB_FIRST_SECURITY_RUN_V0.md](./COLAB_FIRST_SECURITY_RUN_V0.md)
 - [run_first_security_experiment.py](./run_first_security_experiment.py)
+
+Second experiment:
+
+- [SECOND_SECURITY_EXPERIMENT.md](./SECOND_SECURITY_EXPERIMENT.md)
+- [SECOND_SECURITY_EXPERIMENT_RESULTS.md](./SECOND_SECURITY_EXPERIMENT_RESULTS.md)
+- [COLAB_SECOND_SECURITY_RUN_V0.md](./COLAB_SECOND_SECURITY_RUN_V0.md)
+- [run_second_security_experiment.py](./run_second_security_experiment.py)
 
 ---
 

@@ -1,553 +1,252 @@
-# OMNIA SECURITY
-
-Structural Security Diagnostics
-
-Part of the MB-X.01 / OMNIA structural measurement lineage.
+# OMNIA-SECURITY
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19879356.svg)](https://doi.org/10.5281/zenodo.19879356)
 
+**OMNIA-SECURITY** is a bounded structural diagnostics repository for security-relevant behavior.
+
+It is not a security scanner.
+
+It is not a vulnerability scanner.
+
+It is not exploit tooling.
+
+It does not attack systems.
+
+It does not exploit systems.
+
+It does not replace security review.
+
+Its role is narrower:
+
+```text
+measure structural drift, fragility, instability, and recoverability
+in simplified security-relevant scenarios
+```
+
+Core boundary:
+
+```text
+measurement != inference != decision
+```
+
+Decision remains external.
+
 ---
 
-# New Here
+## Current role
 
-Start here:
+OMNIA-SECURITY applies the OMNIA measurement lineage to bounded security-relevant cases.
 
-1. [SECURITY_AT_A_GLANCE.md](./SECURITY_AT_A_GLANCE.md)
-2. [SECURITY_CASES.md](./SECURITY_CASES.md)
-3. [RUN_ALL_SECURITY_EXPERIMENTS.py](./RUN_ALL_SECURITY_EXPERIMENTS.py)
-4. [FIRST_SECURITY_EXPERIMENT.md](./FIRST_SECURITY_EXPERIMENT.md)
-5. [FIRST_SECURITY_EXPERIMENT_RESULTS.md](./FIRST_SECURITY_EXPERIMENT_RESULTS.md)
-6. [COLAB_FIRST_SECURITY_RUN_V0.md](./COLAB_FIRST_SECURITY_RUN_V0.md)
-7. [SECOND_SECURITY_EXPERIMENT.md](./SECOND_SECURITY_EXPERIMENT.md)
-8. [SECOND_SECURITY_EXPERIMENT_RESULTS.md](./SECOND_SECURITY_EXPERIMENT_RESULTS.md)
-9. [COLAB_SECOND_SECURITY_RUN_V0.md](./COLAB_SECOND_SECURITY_RUN_V0.md)
+It focuses on post-hoc structural diagnostics:
 
-This path is currently the shortest route from first contact to the current bounded structural security direction of the repository.
+- configuration drift
+- log instability
+- structural fragility
+- irreversible degradation
+- recoverability loss
+- suspicious-clean outputs
+- security-relevant structural risk signals
+
+The repository currently contains small controlled examples, not production cybersecurity tooling.
 
 ---
 
-# Quick Run
+## What it measures
 
-Run all current bounded security experiments:
+OMNIA-SECURITY measures structural behavior such as:
+
+- whether a system-like object remains structurally stable after perturbation
+- when divergence begins
+- which security-relevant properties survive transformation
+- whether drift is recoverable or irreversible
+- whether superficially acceptable outputs remain structurally coherent
+
+These are structural signals.
+
+They are not operational security decisions.
+
+---
+
+## What it is not
+
+OMNIA-SECURITY is not:
+
+- offensive tooling
+- exploit generation
+- malware
+- vulnerability scanner
+- security scanner
+- penetration-testing framework
+- autonomous cyber defense
+- SIEM replacement
+- production monitoring
+- incident response system
+- universal threat detector
+- final decision engine
+
+It does not exploit.
+
+It does not attack.
+
+It does not generate attack payloads.
+
+It does not certify that a system is secure.
+
+---
+
+## Existing bounded experiments
+
+The repository currently contains two small bounded experiments.
+
+### Experiment 01 — Configuration drift vs surface stability
+
+This experiment compares two simplified configurations that remain superficially operational while structurally diverging.
+
+Core distinction:
+
+```text
+surface similarity != structural equivalence
+```
+
+Relevant files:
+- [`FIRST_SECURITY_EXPERIMENT.md`](FIRST_SECURITY_EXPERIMENT.md)
+- [`FIRST_SECURITY_EXPERIMENT_RESULTS.md`](FIRST_SECURITY_EXPERIMENT_RESULTS.md)
+- [`COLAB_FIRST_SECURITY_RUN_V0.md`](COLAB_FIRST_SECURITY_RUN_V0.md)
+- [`run_first_security_experiment.py`](run_first_security_experiment.py)
+
+### Experiment 02 — Log instability before visible failure
+
+This experiment compares stable and unstable authentication-like log trajectories.
+
+Core distinction:
+
+```text
+log availability != log structural stability
+```
+
+Relevant files:
+- [`SECOND_SECURITY_EXPERIMENT.md`](SECOND_SECURITY_EXPERIMENT.md)
+- [`SECOND_SECURITY_EXPERIMENT_RESULTS.md`](SECOND_SECURITY_EXPERIMENT_RESULTS.md)
+- [`COLAB_SECOND_SECURITY_RUN_V0.md`](COLAB_SECOND_SECURITY_RUN_V0.md)
+- [`run_second_security_experiment.py`](run_second_security_experiment.py)
+
+---
+
+## Run
+
+Run all current bounded examples:
 
 ```bash
 python RUN_ALL_SECURITY_EXPERIMENTS.py
 ```
 
-Runner:
+Run individual experiments:
 
-- [RUN_ALL_SECURITY_EXPERIMENTS.py](./RUN_ALL_SECURITY_EXPERIMENTS.py)
-
-Current experiments include:
-
-1. configuration drift vs surface stability
-2. log instability before visible failure
-
-The goal is not production security analysis.
-
-The goal is bounded structural inspection under controlled simplified conditions.
-
----
-
-# What It Is
-
-OMNIA SECURITY is a bounded structural measurement layer for security-relevant systems.
-
-It focuses on:
-
-- instability
-- drift
-- irreversibility
-- resilience
-- divergence timing
-- residual invariant integrity
-
-under controlled transformations.
-
-The framework is diagnostic.
-
-It does not perform autonomous defense or offensive operations.
-
----
-
-# Core Principle
-
-```text
-surface stability != structural equivalence
+```bash
+python run_first_security_experiment.py
+python run_second_security_experiment.py
 ```
 
-A system may appear operational while structurally diverging in security-relevant ways.
+Run repository checks:
 
-General OMNIA principle:
-
-```text
-structural truth = invariance under transformation
+```bash
+python -m pip install -e .
+python -m pytest
 ```
 
 ---
 
-# Architectural Boundary
+## Public entrypoints
+
+- [`SECURITY_AT_A_GLANCE.md`](SECURITY_AT_A_GLANCE.md)
+- [`SECURITY_CASES.md`](SECURITY_CASES.md)
+- [`docs/SECURITY_SCOPE.md`](docs/SECURITY_SCOPE.md)
+- [`docs/RESULTS_INDEX.md`](docs/RESULTS_INDEX.md)
+- [`docs/REPOSITORY_STATUS.md`](docs/REPOSITORY_STATUS.md)
+
+---
+
+## Methodological boundary
+
+Correct reading:
+
+```text
+structural drift signal = diagnostic evidence
+diagnostic evidence != confirmed vulnerability
+confirmed vulnerability != automatic decision
+measurement != inference != decision
+```
+
+Incorrect reading:
+
+```text
+OMNIA-SECURITY proves a system is secure
+OMNIA-SECURITY proves a system is vulnerable
+OMNIA-SECURITY replaces security review
+OMNIA-SECURITY performs attacks
+```
+
+---
+
+## Relationship to OMNIA
+
+OMNIA-SECURITY is a verticalization of the broader OMNIA framework.
+
+```text
+OMNIA             = structural measurement core
+OMNIA-SECURITY    = bounded structural diagnostics for security-relevant behavior
+OMNIA-VALIDATION  = evidence / reproducibility layer
+OMNIA-LIMIT       = terminal boundary layer
+Decision           = external layer
+```
+
+The separation remains strict:
 
 ```text
 measurement != inference != decision
 ```
 
-OMNIA SECURITY measures structural behavior.
+---
 
-Interpretation and operational decisions remain external.
+## Related repositories
 
-This repository does not collapse measurement into action.
+- lon-mirror: https://github.com/Tuttotorna/lon-mirror
+- OMNIA: https://github.com/Tuttotorna/OMNIA
+- OMNIA-VALIDATION: https://github.com/Tuttotorna/OMNIA-VALIDATION
+- omnia-limit: https://github.com/Tuttotorna/omnia-limit
+- OMNIA-RADAR: https://github.com/Tuttotorna/OMNIA-RADAR
 
 ---
 
-# What It Measures
+## Citation
 
-Current directions include:
-
-- log instability
-- configuration drift
-- prompt injection structural degradation
-- suspicious-clean security outputs
-- resilience after perturbation
-- irreversible structural loss
-- residual invariant extraction
-- bounded anomaly signaling
-
----
-
-# Current Experiments
-
-The repository currently contains two bounded security-relevant structural experiments.
-
----
-
-## Experiment 01 — Configuration Drift vs Surface Stability
-
-This experiment compares two simplified configurations.
-
-Baseline:
-
-```json
-{
-  "auth": true,
-  "tls": "enabled",
-  "timeout": 30,
-  "logging": "full",
-  "admin_remote": false
-}
-```
-
-Modified:
-
-```json
-{
-  "auth": true,
-  "tls": "enabled",
-  "timeout": 30,
-  "logging": "minimal",
-  "admin_remote": true
-}
-```
-
-Surface observation:
+If you reference this repository, use the archived Zenodo record:
 
 ```text
-both systems appear operational
-both retain authentication
-both retain TLS
-both remain syntactically valid
+DOI: 10.5281/zenodo.19879356
+https://doi.org/10.5281/zenodo.19879356
 ```
 
-Structural observation:
+Citation metadata is available in:
+
+- [`CITATION.cff`](CITATION.cff)
+
+---
+
+## Summary
+
+OMNIA-SECURITY is a bounded structural diagnostics repository.
+
+It is not cybersecurity automation.
+
+It is not a scanner.
+
+It is not exploit tooling.
+
+It measures structural behavior in security-relevant simplified cases.
+
+Its central boundary is:
 
 ```text
-logging visibility reduced
-remote administrative exposure enabled
-potential recoverability degradation
-```
-
-Key separation:
-
-```text
-surface similarity
-!=
-structural equivalence
-```
-
-Files:
-
-- [FIRST_SECURITY_EXPERIMENT.md](./FIRST_SECURITY_EXPERIMENT.md)
-- [FIRST_SECURITY_EXPERIMENT_RESULTS.md](./FIRST_SECURITY_EXPERIMENT_RESULTS.md)
-- [COLAB_FIRST_SECURITY_RUN_V0.md](./COLAB_FIRST_SECURITY_RUN_V0.md)
-- [run_first_security_experiment.py](./run_first_security_experiment.py)
-
----
-
-## Experiment 02 — Log Instability Before Visible Failure
-
-This experiment compares two simplified log trajectories.
-
-Stable trajectory:
-
-```text
-t1: auth_success user=alice method=password
-t2: auth_success user=bob method=password
-t3: auth_success user=carol method=password
-t4: auth_success user=dave method=password
-t5: auth_success user=erin method=password
-```
-
-Unstable trajectory:
-
-```text
-t1: auth_success user=alice method=password
-t2: auth_retry user=alice method=password
-t3: auth_retry user=alice method=password
-t4: auth_error user=unknown method=missing
-t5: auth_bypass_attempt user=unknown method=null
-```
-
-Surface observation:
-
-```text
-both trajectories remain parseable
-both remain authentication-related
-both continue emitting logs
-```
-
-Structural observation:
-
-```text
-retry concentration
-event taxonomy drift
-unknown identity emergence
-field degradation
-```
-
-Key separation:
-
-```text
-log availability
-!=
-log structural stability
-```
-
-Files:
-
-- [SECOND_SECURITY_EXPERIMENT.md](./SECOND_SECURITY_EXPERIMENT.md)
-- [SECOND_SECURITY_EXPERIMENT_RESULTS.md](./SECOND_SECURITY_EXPERIMENT_RESULTS.md)
-- [COLAB_SECOND_SECURITY_RUN_V0.md](./COLAB_SECOND_SECURITY_RUN_V0.md)
-- [run_second_security_experiment.py](./run_second_security_experiment.py)
-
----
-
-# Example Questions
-
-Examples of bounded questions:
-
-```text
-Does the structure remain stable after perturbation?
-
-When does divergence begin?
-
-Which security-relevant properties survive transformation?
-
-Is the observed drift recoverable or irreversible?
-
-Do superficially acceptable outputs remain structurally coherent?
-```
-
----
-
-# Current Security Cases
-
-Current bounded cases are listed in:
-
-- [SECURITY_CASES.md](./SECURITY_CASES.md)
-
-They include:
-
-- log instability
-- configuration drift
-- suspicious-clean security outputs
-- irreversible structural damage
-- resilience under perturbation
-
----
-
-# Quick Overview
-
-For a compressed 60-second overview, read:
-
-- [SECURITY_AT_A_GLANCE.md](./SECURITY_AT_A_GLANCE.md)
-
----
-
-# What It Is NOT
-
-OMNIA SECURITY is NOT:
-
-- offensive tooling
-- exploit generation
-- malware
-- autonomous cyber defense
-- attack automation
-- universal threat detection
-- production-grade security infrastructure
-- production monitoring
-- SIEM replacement
-
----
-
-# Current Status
-
-Current status:
-
-```text
-early bounded research direction
-```
-
-The repository currently defines direction, architectural scope, two runnable security-relevant structural drift examples, and Colab verification notes.
-
-No production claims are made.
-
-No deployment claims are made.
-
----
-
-# Repository Direction
-
-The intended direction is:
-
-```text
-security-relevant structural diagnostics
-```
-
-using the OMNIA measurement lineage:
-
-```text
-instability
-drift
-irreversibility
-resilience
-divergence timing
-invariant extraction
-```
-
----
-
-# Relationship To OMNIA
-
-OMNIA SECURITY is a verticalization of the broader OMNIA framework.
-
-Core repository:
-
-- [OMNIA](https://github.com/Tuttotorna/OMNIA)
-
-Operational lineage:
-
-- [lon-mirror](https://github.com/Tuttotorna/lon-mirror)
-
-Related DOI:
-
-- [Zenodo DOI](https://doi.org/10.5281/zenodo.19857066)
-
----
-
-# Current Goal
-
-The current goal is not universal cybersecurity.
-
-The current goal is:
-
-```text
-bounded structural inspection
-of security-relevant behavior
-```
-
-under controlled conditions.
-
----
-
-# File Landmarks
-
-Start here:
-
-- [SECURITY_AT_A_GLANCE.md](./SECURITY_AT_A_GLANCE.md)
-
-Cases:
-
-- [SECURITY_CASES.md](./SECURITY_CASES.md)
-
-Run all experiments:
-
-- [RUN_ALL_SECURITY_EXPERIMENTS.py](./RUN_ALL_SECURITY_EXPERIMENTS.py)
-
-First experiment:
-
-- [FIRST_SECURITY_EXPERIMENT.md](./FIRST_SECURITY_EXPERIMENT.md)
-- [FIRST_SECURITY_EXPERIMENT_RESULTS.md](./FIRST_SECURITY_EXPERIMENT_RESULTS.md)
-- [COLAB_FIRST_SECURITY_RUN_V0.md](./COLAB_FIRST_SECURITY_RUN_V0.md)
-- [run_first_security_experiment.py](./run_first_security_experiment.py)
-
-Second experiment:
-
-- [SECOND_SECURITY_EXPERIMENT.md](./SECOND_SECURITY_EXPERIMENT.md)
-- [SECOND_SECURITY_EXPERIMENT_RESULTS.md](./SECOND_SECURITY_EXPERIMENT_RESULTS.md)
-- [COLAB_SECOND_SECURITY_RUN_V0.md](./COLAB_SECOND_SECURITY_RUN_V0.md)
-- [run_second_security_experiment.py](./run_second_security_experiment.py)
-
----
-
-# Final Boundary
-
-OMNIA SECURITY does not claim to secure systems.
-
-It measures structural behavior relevant to security.
-
-Security action remains external.
-
----
-
-```text
-LON-MIRROR
-|
-├── CORE
-|   ├── OMNIA
-|   ├── OMNIA-INVARIANCE
-|   ├── omnia-limit
-|   └── OMNIA-RADAR
-|
-├── RESEARCH
-|   ├── OMNIA-CONSTANT
-|   └── OMNIA-THREE-BODY
-|
-├── REPRESENTATION
-|   └── OMNIABASE
-|
-└── APPLICATIONS
-    ├── OMNIA-SECURITY
-    ├── OMNIA-CRYPTO
-    └── OMNIAMIND
-
-Root
-
-LON-MIRROR
-
-
-Canonical ecosystem hub, lineage map, navigation layer, and coordination entry point.
-
-
----
-
-Core
-
-OMNIA
-
-
-Core structural measurement framework.
-
-OMNIA-INVARIANCE
-
-
-Core validation and invariance-testing repository.
-Focuses on structural invariance, perturbation behavior, and controlled evidence around Ω under transformation.
-
-omnia-limit
-
-
-Structural stopping conditions, saturation, irreducibility, and limit behavior.
-
-OMNIA-RADAR
-
-
-Structural drift surfacing and trajectory visualization layer.
-
-
----
-
-Research
-
-OMNIA-CONSTANT
-
-
-Post-analysis and falsification repository for Ω-region behavior.
-Current focus: whether observed Ω corridors behave as structural transition regimes or collapse as measurement artifacts.
-No universal structural constant is declared.
-
-OMNIA-THREE-BODY
-
-
-Experimental dynamics repository for multi-body structural interaction tests.
-Focuses on instability, trajectory interaction, and non-trivial structural behavior under interacting perturbations.
-
-
----
-
-Representation
-
-OMNIABASE
-
-
-Multi-base structural representation and invariance exploration layer.
-
-
----
-
-Applications
-
-OMNIA-SECURITY
-
-
-Bounded structural diagnostics for security-relevant systems.
-
-OMNIA-CRYPTO
-
-
-Bounded structural diagnostics for cryptographic behavior.
-
-OMNIAMIND
-
-
-Bounded structural diagnostics for cognitive and reasoning-related behavior.
-
-
----
-
-Architectural Separation
-
-LON-MIRROR
-=
-ecosystem hub
-
-OMNIA
-=
-core structural measurement layer
-
-OMNIA-INVARIANCE
-=
-core invariance validation layer
-
-OMNIA-CONSTANT
-=
-post-analysis / falsification layer for Ω-region behavior
-
-OMNIA-THREE-BODY
-=
-experimental structural dynamics layer
-
-Other repositories
-=
-representation layers,
-limit layers,
-visualization layers,
-or bounded domain verticalizations.
-
-
----
-
-Core Boundary
-
 measurement != inference != decision
----
-
+```

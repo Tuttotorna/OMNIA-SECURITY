@@ -250,3 +250,20 @@ Its central boundary is:
 ```text
 measurement != inference != decision
 ```
+
+---
+
+## OMNIA-SECURITY — Public Boundary
+
+- OMNIA-SECURITY is a bounded structural diagnostics layer for security-relevant behavior.
+- OMNIA-SECURITY is not a security scanner.
+- OMNIA-SECURITY is not a vulnerability scanner.
+- OMNIA-SECURITY does not exploit systems.
+- OMNIA-SECURITY does not attack systems.
+- OMNIA-SECURITY is not a truth oracle.
+- OMNIA-SECURITY is not a semantic judge.
+- OMNIA-SECURITY is not a decision engine.
+- measurement != inference != decision
+- decision remains external
+
+This section is a public boundary clarification. It does not change the repository core logic.

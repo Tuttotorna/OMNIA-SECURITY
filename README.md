@@ -268,9 +268,6 @@ measurement != inference != decision
 
 This section is a public boundary clarification. It does not change the repository core logic.
 
-- [`docs/OMNIA_SECURITY_PUBLIC_POSITION.md`](docs/OMNIA_SECURITY_PUBLIC_POSITION.md)
-
-
 ## Public position
 
 OMNIA-SECURITY public positioning is documented here:
@@ -302,5 +299,3 @@ OMNIA-SECURITY does not certify safety.
 It does not replace cybersecurity review.
 
 It does not make final deployment decisions.
-
----

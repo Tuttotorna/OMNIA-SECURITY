@@ -266,7 +266,12 @@ measurement != inference != decision
 - measurement != inference != decision
 - decision remains external
 
-This section is a public boundary clarification. It does not change the repository core logic.\n\n- [`docs/OMNIA_SECURITY_PUBLIC_POSITION.md`](docs/OMNIA_SECURITY_PUBLIC_POSITION.md)\n\n\n## Public position
+This section is a public boundary clarification. It does not change the repository core logic.
+
+- [`docs/OMNIA_SECURITY_PUBLIC_POSITION.md`](docs/OMNIA_SECURITY_PUBLIC_POSITION.md)
+
+
+## Public position
 
 OMNIA-SECURITY public positioning is documented here:
 

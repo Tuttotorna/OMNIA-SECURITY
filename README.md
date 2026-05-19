@@ -266,4 +266,36 @@ measurement != inference != decision
 - measurement != inference != decision
 - decision remains external
 
-This section is a public boundary clarification. It does not change the repository core logic.
+This section is a public boundary clarification. It does not change the repository core logic.\n\n- [`docs/OMNIA_SECURITY_PUBLIC_POSITION.md`](docs/OMNIA_SECURITY_PUBLIC_POSITION.md)\n\n\n## Public position
+
+OMNIA-SECURITY public positioning is documented here:
+
+- [`docs/OMNIA_SECURITY_PUBLIC_POSITION.md`](docs/OMNIA_SECURITY_PUBLIC_POSITION.md)
+
+Core thesis:
+
+```text
+security signal != security proof
+risk signal != final decision
+```
+
+Core boundary:
+
+```text
+security signal != safety certificate
+measurement != inference != decision
+```
+
+Core role:
+
+```text
+OMNIA-SECURITY detects and organizes security-relevant structural risk signals and containment boundaries.
+```
+
+OMNIA-SECURITY does not certify safety.
+
+It does not replace cybersecurity review.
+
+It does not make final deployment decisions.
+
+---

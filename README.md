@@ -1,301 +1,232 @@
 # OMNIA-SECURITY
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19879356.svg)](https://doi.org/10.5281/zenodo.19879356)
+**Bounded structural diagnostics for security-relevant traces.**
 
-**OMNIA-SECURITY** is a bounded structural diagnostics repository for security-relevant behavior.
+OMNIA-SECURITY is the security-relevant diagnostic layer of the MB-X.01 / OMNIA ecosystem.
+
+DOI:
+
+    10.5281/zenodo.19879356
+
+Its role is narrow:
+
+    security-relevant trace -> structural diagnostic -> risk signal -> external security decision
+
+It asks one question:
+
+    does this security-relevant trace show structural behavior worth external inspection?
+
+OMNIA-SECURITY is not the ecosystem landing page.
+
+It is not the validation showroom.
+
+It is not the OMNIA core measurement engine.
 
 It is not a security scanner.
 
 It is not a vulnerability scanner.
 
-It is not exploit tooling.
+It is not an exploit tool.
 
-It does not attack systems.
-
-It does not exploit systems.
-
-It does not replace security review.
-
-Its role is narrower:
-
-```text
-measure structural drift, fragility, instability, and recoverability
-in simplified security-relevant scenarios
-```
-
-Core boundary:
-
-```text
-measurement != inference != decision
-```
-
-Decision remains external.
-
----
-
-## Current role
-
-OMNIA-SECURITY applies the OMNIA measurement lineage to bounded security-relevant cases.
-
-It focuses on post-hoc structural diagnostics:
-
-- configuration drift
-- log instability
-- structural fragility
-- irreversible degradation
-- recoverability loss
-- suspicious-clean outputs
-- security-relevant structural risk signals
-
-The repository currently contains small controlled examples, not production cybersecurity tooling.
-
----
-
-## What it measures
-
-OMNIA-SECURITY measures structural behavior such as:
-
-- whether a system-like object remains structurally stable after perturbation
-- when divergence begins
-- which security-relevant properties survive transformation
-- whether drift is recoverable or irreversible
-- whether superficially acceptable outputs remain structurally coherent
-
-These are structural signals.
-
-They are not operational security decisions.
-
----
-
-## What it is not
-
-OMNIA-SECURITY is not:
-
-- offensive tooling
-- exploit generation
-- malware
-- vulnerability scanner
-- security scanner
-- penetration-testing framework
-- autonomous cyber defense
-- SIEM replacement
-- production monitoring
-- incident response system
-- universal threat detector
-- final decision engine
-
-It does not exploit.
+It is not a vulnerability verdict engine.
 
 It does not attack.
 
-It does not generate attack payloads.
+It does not exploit.
 
-It does not certify that a system is secure.
+It performs bounded structural diagnostics only.
 
----
+Canonical boundary:
 
-## Existing bounded experiments
+    measurement != inference != decision
 
-The repository currently contains two small bounded experiments.
-
-### Experiment 01 — Configuration drift vs surface stability
-
-This experiment compares two simplified configurations that remain superficially operational while structurally diverging.
-
-Core distinction:
-
-```text
-surface similarity != structural equivalence
-```
-
-Relevant files:
-- [`FIRST_SECURITY_EXPERIMENT.md`](FIRST_SECURITY_EXPERIMENT.md)
-- [`FIRST_SECURITY_EXPERIMENT_RESULTS.md`](FIRST_SECURITY_EXPERIMENT_RESULTS.md)
-- [`COLAB_FIRST_SECURITY_RUN_V0.md`](COLAB_FIRST_SECURITY_RUN_V0.md)
-- [`run_first_security_experiment.py`](run_first_security_experiment.py)
-
-### Experiment 02 — Log instability before visible failure
-
-This experiment compares stable and unstable authentication-like log trajectories.
-
-Core distinction:
-
-```text
-log availability != log structural stability
-```
-
-Relevant files:
-- [`SECOND_SECURITY_EXPERIMENT.md`](SECOND_SECURITY_EXPERIMENT.md)
-- [`SECOND_SECURITY_EXPERIMENT_RESULTS.md`](SECOND_SECURITY_EXPERIMENT_RESULTS.md)
-- [`COLAB_SECOND_SECURITY_RUN_V0.md`](COLAB_SECOND_SECURITY_RUN_V0.md)
-- [`run_second_security_experiment.py`](run_second_security_experiment.py)
+    Decision remains external
 
 ---
 
-## Run
+## Start here
 
-Run all current bounded examples:
+From a clean environment:
 
-```bash
-python RUN_ALL_SECURITY_EXPERIMENTS.py
-```
+    git clone https://github.com/Tuttotorna/OMNIA-SECURITY.git
+    cd OMNIA-SECURITY
+    python -m pip install -e .
+    pytest
 
-Run individual experiments:
+If example scripts are available, run the smallest demonstration after tests pass.
 
-```bash
-python run_first_security_experiment.py
-python run_second_security_experiment.py
-```
+The goal is to see the diagnostic path:
 
-Run repository checks:
-
-```bash
-python -m pip install -e .
-python -m pytest
-```
+    security-relevant trace
+      -> structural diagnostic
+      -> risk signal
+      -> bounded report
+      -> external security decision
 
 ---
 
-## Public entrypoints
+## What OMNIA-SECURITY does
 
-- [`SECURITY_AT_A_GLANCE.md`](SECURITY_AT_A_GLANCE.md)
-- [`SECURITY_CASES.md`](SECURITY_CASES.md)
-- [`docs/SECURITY_SCOPE.md`](docs/SECURITY_SCOPE.md)
-- [`docs/RESULTS_INDEX.md`](docs/RESULTS_INDEX.md)
-- [`docs/REPOSITORY_STATUS.md`](docs/REPOSITORY_STATUS.md)
+OMNIA-SECURITY applies OMNIA-style structural boundaries to security-relevant traces.
 
----
+It can help expose:
 
-## Methodological boundary
+- structural anomaly;
+- drift;
+- instability;
+- compatibility loss;
+- fragile behavior;
+- diagnostic candidates worth external security review.
 
-Correct reading:
+Public compression:
 
-```text
-structural drift signal = diagnostic evidence
-diagnostic evidence != confirmed vulnerability
-confirmed vulnerability != automatic decision
-measurement != inference != decision
-```
-
-Incorrect reading:
-
-```text
-OMNIA-SECURITY proves a system is secure
-OMNIA-SECURITY proves a system is vulnerable
-OMNIA-SECURITY replaces security review
-OMNIA-SECURITY performs attacks
-```
+    OMNIA-SECURITY diagnoses structure.
+    It is not a security scanner.
+    It is not a vulnerability scanner.
+    It does not attack.
+    It does not exploit.
+    It does not issue verdicts.
+    Decision remains external.
 
 ---
 
-## Relationship to OMNIA
+## What OMNIA-SECURITY does not do
 
-OMNIA-SECURITY is a verticalization of the broader OMNIA framework.
+OMNIA-SECURITY does not:
 
-```text
-OMNIA             = structural measurement core
-OMNIA-SECURITY    = bounded structural diagnostics for security-relevant behavior
-OMNIA-VALIDATION  = evidence / reproducibility layer
-OMNIA-LIMIT       = terminal boundary layer
-Decision           = external layer
-```
+- perform security scanning;
+- perform vulnerability scanning;
+- attack systems;
+- exploit systems;
+- provide attack instructions;
+- decide whether a system is secure;
+- replace security review;
+- infer semantic truth;
+- replace OMNIA measurement;
+- replace OMNIA-VALIDATION;
+- convert risk signals into final decisions.
 
-The separation remains strict:
+The final security decision remains external.
 
-```text
-measurement != inference != decision
-```
+---
+
+## Public mental model
+
+    A risk signal is not a vulnerability verdict.
+    A diagnostic artifact is not an exploit.
+    OMNIA-SECURITY stays inside structural measurement boundaries.
+
+---
+
+## Diagnostic contract
+
+Every serious OMNIA-SECURITY result should make clear:
+
+| Component | Meaning |
+|---|---|
+| trace | Security-relevant trace, output, log, behavior, or artifact |
+| diagnostic mode | Declared structural diagnostic method |
+| structural signal | Signal detected or measured |
+| risk signal | Bounded indication requiring inspection |
+| report | Artifact describing the diagnostic result |
+| limitation | What the result does not prove |
+| external review | How security review should proceed outside the repository |
+
+---
+
+## Result vocabulary
+
+Recommended result vocabulary:
+
+    no_signal
+    risk_signal
+    anomaly
+    unstable
+    candidate
+    inconclusive
+
+Meaning:
+
+- no_signal: no relevant structural signal under declared diagnostic conditions;
+- risk_signal: bounded signal requiring external review;
+- anomaly: unexpected structural behavior;
+- unstable: structure changes significantly;
+- candidate: diagnostic candidate worth further testing;
+- inconclusive: evidence is insufficient or ambiguous.
+
+---
+
+## Recommended reading order
+
+1. [docs/QUICKSTART_SECURITY.md](docs/QUICKSTART_SECURITY.md)
+2. [docs/SECURITY_OVERVIEW.md](docs/SECURITY_OVERVIEW.md)
+3. [docs/DIAGNOSTIC_CONTRACT.md](docs/DIAGNOSTIC_CONTRACT.md)
+4. [docs/RISK_SIGNAL_BOUNDARY.md](docs/RISK_SIGNAL_BOUNDARY.md)
+5. [docs/NOT_A_SCANNER_NOT_A_VERDICT.md](docs/NOT_A_SCANNER_NOT_A_VERDICT.md)
+6. [docs/SECURITY_MANIFEST.json](docs/SECURITY_MANIFEST.json)
 
 ---
 
 ## Related repositories
 
-- lon-mirror: https://github.com/Tuttotorna/lon-mirror
-- OMNIA: https://github.com/Tuttotorna/OMNIA
-- OMNIA-VALIDATION: https://github.com/Tuttotorna/OMNIA-VALIDATION
-- omnia-limit: https://github.com/Tuttotorna/omnia-limit
-- OMNIA-RADAR: https://github.com/Tuttotorna/OMNIA-RADAR
+| Repository | Role |
+|---|---|
+| [lon-mirror](https://github.com/Tuttotorna/lon-mirror) | Canonical ecosystem entry point |
+| [OMNIA-VALIDATION](https://github.com/Tuttotorna/OMNIA-VALIDATION) | Public validation showroom |
+| [OMNIA](https://github.com/Tuttotorna/OMNIA) | Core structural measurement engine |
+| [OMNIABASE](https://github.com/Tuttotorna/OMNIABASE) | Representation invariance foundation |
+| [OMNIA-RADAR](https://github.com/Tuttotorna/OMNIA-RADAR) | Structural signal detection layer |
+| [OMNIA-INVARIANCE](https://github.com/Tuttotorna/OMNIA-INVARIANCE) | Transformation and invariance layer |
+| [omnia-limit](https://github.com/Tuttotorna/omnia-limit) | Stop / continue boundary layer |
+| [OMNIA-CONSTANT](https://github.com/Tuttotorna/OMNIA-CONSTANT) | Stable-region falsification layer |
+| [OMNIAMIND](https://github.com/Tuttotorna/OMNIAMIND) | Structural cognition orchestration layer |
+| [OMNIA-THREE-BODY](https://github.com/Tuttotorna/OMNIA-THREE-BODY) | Dynamic divergence stress test |
 
 ---
 
-## Citation
+## Ecosystem entry point
 
-If you reference this repository, use the archived Zenodo record:
+For the full ecosystem map, start here:
 
-```text
-DOI: 10.5281/zenodo.19879356
-https://doi.org/10.5281/zenodo.19879356
-```
+    https://github.com/Tuttotorna/lon-mirror
 
-Citation metadata is available in:
+For public validation artifacts, start here:
 
-- [`CITATION.cff`](CITATION.cff)
+    https://github.com/Tuttotorna/OMNIA-VALIDATION
 
----
+For core structural measurement, start here:
 
-## Summary
-
-OMNIA-SECURITY is a bounded structural diagnostics repository.
-
-It is not cybersecurity automation.
-
-It is not a scanner.
-
-It is not exploit tooling.
-
-It measures structural behavior in security-relevant simplified cases.
-
-Its central boundary is:
-
-```text
-measurement != inference != decision
-```
+    https://github.com/Tuttotorna/OMNIA
 
 ---
 
-## OMNIA-SECURITY — Public Boundary
+## Smoke-test required terms
 
-- OMNIA-SECURITY is a bounded structural diagnostics layer for security-relevant behavior.
-- OMNIA-SECURITY is not a security scanner.
-- OMNIA-SECURITY is not a vulnerability scanner.
-- OMNIA-SECURITY does not exploit systems.
-- OMNIA-SECURITY does not attack systems.
-- OMNIA-SECURITY is not a truth oracle.
-- OMNIA-SECURITY is not a semantic judge.
-- OMNIA-SECURITY is not a decision engine.
-- measurement != inference != decision
-- decision remains external
+    not a security scanner
+    not a vulnerability scanner
+    does not attack
+    does not exploit
+    Decision remains external
+    10.5281/zenodo.19879356
 
-This section is a public boundary clarification. It does not change the repository core logic.
+---
 
-## Public position
 
-OMNIA-SECURITY public positioning is documented here:
+## Additional smoke-test required terms
 
-- [`docs/OMNIA_SECURITY_PUBLIC_POSITION.md`](docs/OMNIA_SECURITY_PUBLIC_POSITION.md)
+    LICENSE
+    CITATION.cff
+    pyproject.toml
+    pytest.ini
+    run_first_security_experiment.py
+    run_second_security_experiment.py
+    RUN_ALL_SECURITY_EXPERIMENTS.py
+    diagnostic signal != confirmed vulnerability
+    structural drift != exploit
+    security-relevant measurement != security scanner
+    CITATION.cff
 
-Core thesis:
+## License
 
-```text
-security signal != security proof
-risk signal != final decision
-```
+MIT.
 
-Core boundary:
-
-```text
-security signal != safety certificate
-measurement != inference != decision
-```
-
-Core role:
-
-```text
-OMNIA-SECURITY detects and organizes security-relevant structural risk signals and containment boundaries.
-```
-
-OMNIA-SECURITY does not certify safety.
-
-It does not replace cybersecurity review.
-
-It does not make final deployment decisions.

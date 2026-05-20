@@ -1,0 +1,89 @@
+{
+  "generated_utc": "2026-05-20T13:26:31.766135+00:00",
+  "repository": "OMNIA-SECURITY",
+  "role": "bounded structural security diagnostics",
+  "ecosystem": "MB-X.01 / OMNIA",
+  "canonical_boundary": "measurement != inference != decision",
+  "doi": "10.5281/zenodo.19879356",
+  "security_pipeline": [
+    "security-relevant trace",
+    "structural diagnostic",
+    "risk signal",
+    "bounded report",
+    "external security decision"
+  ],
+  "public_claim": "OMNIA-SECURITY performs bounded structural diagnostics on security-relevant traces without becoming a scanner, vulnerability scanner, exploit tool, or verdict engine.",
+  "non_claims": [
+    "not a security scanner",
+    "not a vulnerability scanner",
+    "does not attack",
+    "does not exploit",
+    "does not perform security scanning",
+    "does not provide attack instructions",
+    "does not decide whether a system is secure",
+    "does not replace security review",
+    "does not infer semantic truth",
+    "does not convert risk signal into final decision"
+  ],
+  "expected_docs": [
+    "README.md",
+    "docs/QUICKSTART_SECURITY.md",
+    "docs/SECURITY_OVERVIEW.md",
+    "docs/DIAGNOSTIC_CONTRACT.md",
+    "docs/RISK_SIGNAL_BOUNDARY.md",
+    "docs/NOT_A_SCANNER_NOT_A_VERDICT.md",
+    "docs/SECURITY_MANIFEST.json"
+  ],
+  "related_repositories": [
+    {
+      "name": "lon-mirror",
+      "url": "https://github.com/Tuttotorna/lon-mirror",
+      "role": "Canonical ecosystem entry point"
+    },
+    {
+      "name": "OMNIA-VALIDATION",
+      "url": "https://github.com/Tuttotorna/OMNIA-VALIDATION",
+      "role": "Public validation showroom"
+    },
+    {
+      "name": "OMNIA",
+      "url": "https://github.com/Tuttotorna/OMNIA",
+      "role": "Core structural measurement engine"
+    },
+    {
+      "name": "OMNIABASE",
+      "url": "https://github.com/Tuttotorna/OMNIABASE",
+      "role": "Representation invariance foundation"
+    },
+    {
+      "name": "OMNIA-RADAR",
+      "url": "https://github.com/Tuttotorna/OMNIA-RADAR",
+      "role": "Structural signal detection layer"
+    },
+    {
+      "name": "OMNIA-INVARIANCE",
+      "url": "https://github.com/Tuttotorna/OMNIA-INVARIANCE",
+      "role": "Transformation and invariance layer"
+    },
+    {
+      "name": "omnia-limit",
+      "url": "https://github.com/Tuttotorna/omnia-limit",
+      "role": "Stop / continue boundary layer"
+    },
+    {
+      "name": "OMNIA-CONSTANT",
+      "url": "https://github.com/Tuttotorna/OMNIA-CONSTANT",
+      "role": "Stable-region falsification layer"
+    },
+    {
+      "name": "OMNIAMIND",
+      "url": "https://github.com/Tuttotorna/OMNIAMIND",
+      "role": "Structural cognition orchestration layer"
+    },
+    {
+      "name": "OMNIA-THREE-BODY",
+      "url": "https://github.com/Tuttotorna/OMNIA-THREE-BODY",
+      "role": "Dynamic divergence stress test"
+    }
+  ]
+}

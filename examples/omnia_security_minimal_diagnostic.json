@@ -1,0 +1,19 @@
+{
+  "case_id": "omnia-security-minimal-diagnostic-v0",
+  "purpose": "Demonstrate the OMNIA-SECURITY diagnostic contract without claiming vulnerability, exploitability, or final security decision.",
+  "boundary": "measurement != inference != decision",
+  "doi": "10.5281/zenodo.19879356",
+  "pipeline": [
+    "security-relevant trace",
+    "structural diagnostic",
+    "risk signal",
+    "bounded report",
+    "external security decision"
+  ],
+  "trace_ref": "placeholder security-relevant trace",
+  "diagnostic_mode": "placeholder bounded structural diagnostic",
+  "structural_signal": null,
+  "risk_signal": "inconclusive",
+  "limitation": "This placeholder artifact defines the public security diagnostic shape. It is not a vulnerability report.",
+  "external_review": "Security decision remains external."
+}

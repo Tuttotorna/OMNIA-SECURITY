@@ -1,21 +1,5 @@
 # OMNIA-SECURITY
 
-## DOI
-
-[![DOI](https://zenodo.org/badge/1224259075.svg)](https://zenodo.org/badge/latestdoi/1224259075)
-
-Release DOI:
-
-    10.5281/zenodo.19879356
-
-Zenodo latest DOI link:
-
-    https://doi.org/10.5281/zenodo.19879356
-
-GitHub release:
-
-    https://github.com/Tuttotorna/OMNIA-SECURITY/releases/tag/v1.0.0
-
 **Bounded structural diagnostics for security-relevant traces.**
 
 OMNIA-SECURITY is the security-relevant diagnostic layer of the MB-X.01 / OMNIA ecosystem.

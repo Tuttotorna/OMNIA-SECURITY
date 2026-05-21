@@ -1,5 +1,20 @@
 # OMNIA-SECURITY
 
+<!-- ZENODO DOI:START -->
+
+## DOI
+
+[![DOI](https://zenodo.org/badge/1224259075.svg)](https://zenodo.org/badge/latestdoi/1224259075)
+
+Zenodo DOI badge for this repository.
+
+Repository: Tuttotorna/OMNIA-SECURITY
+GitHub repository id: 1224259075
+Latest release DOI: pending Zenodo publication or resolved dynamically by Zenodo badge
+
+<!-- ZENODO DOI:END -->
+
+
 ## DOI
 
 [![DOI](https://zenodo.org/badge/1224259075.svg)](https://zenodo.org/badge/latestdoi/1224259075)

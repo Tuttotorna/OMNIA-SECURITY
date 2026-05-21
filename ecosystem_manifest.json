@@ -1,0 +1,25 @@
+{
+  "repository": "OMNIA-SECURITY",
+  "owner": "Tuttotorna",
+  "ecosystem": "MB-X.01 / OMNIA",
+  "role": "Bounded security-domain structural diagnostics adapter.",
+  "status": "official adapter",
+  "contract": "Measures structural behavior in security-relevant traces; not a scanner, exploit tool, or decision engine.",
+  "boundary": "measurement != inference != decision",
+  "backbone": [
+    "OMNIA",
+    "omnia-limit",
+    "OMNIA-VALIDATION"
+  ],
+  "satellites": [
+    "OMNIABASE",
+    "OMNIA-RADAR",
+    "OMNIA-SECURITY",
+    "OMNIA-CRYPTO",
+    "OMNIAMIND",
+    "OMNIA-THREE-BODY",
+    "OMNIA-INVARIANCE",
+    "OMNIA-CONSTANT"
+  ],
+  "last_hardening_pass_utc": "2026-05-21T14:03:44Z"
+}

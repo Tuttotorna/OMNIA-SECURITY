@@ -3,6 +3,10 @@ message: "If you use OMNIA-SECURITY or OMNIA Security Auditor, please cite this 
 title: "OMNIA-SECURITY: Structural Security Risk, Violation, and Escalation Auditing"
 version: "0.1.0"
 date-released: "2026-05-24"
+doi: "10.5281/zenodo.20369344"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20369344"
 authors:
   - family-names: "Brighindi"
     given-names: "Massimiliano"

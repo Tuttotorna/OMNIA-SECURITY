@@ -1,3 +1,7 @@
+# OMNIA-SECURITY
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20369344.svg)](https://doi.org/10.5281/zenodo.20369344)
+
 <!-- OMNIA_SECURITY_AUDITOR_TOP_START -->
 
 # OMNIA-SECURITY
@@ -207,7 +211,6 @@ decision != measurement
 
 ## DOI
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281%2Fzenodo.20322688.svg)](https://doi.org/10.5281/zenodo.20322688)
 
 Zenodo DOI badge for this repository.
 
@@ -221,7 +224,6 @@ Latest release DOI: 10.5281/zenodo.20322688
 
 ## DOI
 
-[![DOI](https://zenodo.org/badge/1224259075.svg)](https://zenodo.org/badge/latestdoi/1224259075)
 
 Release DOI: [10.5281/zenodo.19879356](https://doi.org/10.5281/zenodo.19879356)
 

@@ -4,7 +4,6 @@
 
 <!-- OMNIA_SECURITY_AUDITOR_TOP_START -->
 
-# OMNIA-SECURITY
 
 ## Concrete entrypoint: OMNIA Security Auditor
 

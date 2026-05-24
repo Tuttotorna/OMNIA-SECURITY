@@ -36,3 +36,6 @@ include = ["omnia_security*"]
 [tool.ruff]
 target-version = "py310"
 line-length = 88
+
+[project.scripts]
+omnia-security-audit = "omnia_security_auditor.cli:main"

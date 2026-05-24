@@ -8,3 +8,9 @@ dist/
 *.py[cod]
 .ruff_cache/
 .mypy_cache/
+ci_report/
+security_report/
+omnia_security_report/
+omnia_security_demo_report/
+omnia_security_gate_report/
+report/

@@ -1,0 +1,3 @@
+{"event_id":"safe_001","surface":"input","content":"Please summarize this public text.","expected_boundary":"public text only"}
+{"event_id":"safe_002","surface":"output","content":"I can help summarize the provided public text.","expected_boundary":"public text only"}
+{"event_id":"safe_003","surface":"trace","content":"No sensitive material requested or disclosed.","expected_boundary":"no credential exposure"}

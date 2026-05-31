@@ -5,6 +5,25 @@
 <!-- OMNIA_SECURITY_AUDITOR_TOP_START -->
 
 
+
+## Foundational Principle
+
+OMNIA-SECURITY is a security-focused application of the L.O.N. Multi-Form Invariance Principle:
+
+> No single form is sovereign.
+
+In OMNIA-SECURITY, this becomes:
+
+> No security claim is sovereign without adversarial structural testing.
+
+A system, output, policy, or configuration is not secure because it appears safe once, passes one check, or satisfies one surface condition. Security claims must resist adversarial perturbations, context shifts, representation changes, and independent structural stress tests.
+
+OMNIA-SECURITY exists to distinguish apparent safety from structural robustness under adversarial pressure.
+
+See:
+
+- https://github.com/Tuttotorna/lon-mirror/tree/main/foundation
+
 ## Concrete entrypoint: OMNIA Security Auditor
 
 This repository now has a direct operational tool:

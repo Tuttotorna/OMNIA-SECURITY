@@ -1,29 +1,11 @@
 cff-version: 1.2.0
-message: "If you use OMNIA-SECURITY or OMNIA Security Auditor, please cite this archived release."
-title: "OMNIA-SECURITY: Structural Security Risk, Violation, and Escalation Auditing"
-version: "0.1.0"
-date-released: "2026-05-24"
-doi: "10.5281/zenodo.20369344"
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.20369344"
+message: "If you use this software, please cite it using the metadata from this file."
+title: "OMNIA-SECURITY: OMNIA Structural Observability Repository"
 authors:
   - family-names: "Brighindi"
     given-names: "Massimiliano"
-repository-code: "https://github.com/Tuttotorna/OMNIA-SECURITY"
+    affiliation: "Independent researcher"
+version: "v0.1.0"
+date-released: 2026-06-13
 url: "https://github.com/Tuttotorna/OMNIA-SECURITY"
-license: "MIT"
-abstract: "OMNIA-SECURITY provides a standalone OMNIA Security Auditor for measuring structural security risk, violation, and escalation states inside supplied events. The tool reads JSONL event, surface, and content records; computes exposure, override, boundary, escalation, and security scores; classifies events as pass, risk, violation, or escalation; and emits reproducible JSON, CSV, HTML, JSONL, and certificate outputs. It is a measurement tool only: security status means structural risk inside supplied events, not legal, semantic, or operational final judgment."
-keywords:
-  - "OMNIA-SECURITY"
-  - "structural security"
-  - "security risk"
-  - "policy violation"
-  - "escalation detection"
-  - "boundary integrity"
-  - "exposure detection"
-  - "structural measurement"
-  - "OMNIA"
-  - "MB-X.01"
-  - "Logical Origin Node"
-  - "open source"
+type: software
